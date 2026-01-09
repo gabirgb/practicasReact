@@ -12,7 +12,7 @@ createRoot(rootDiv).render(
   <App />, // SIEMPRE hay q cerrar los tags en react, si no tiene tag de cierre se hace autocierre.
 )
 
-/*
-No tocar el archivo main.jsx que se arma por defecto, esto es solo para mostrar qué lineas son indispensables.
+/* *
+! No tocar el archivo main.jsx que se arma por defecto, esto es solo para mostrar qué lineas son indispensables.
 
 */

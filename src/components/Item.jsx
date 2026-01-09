@@ -1,5 +1,7 @@
-//Funcion default del componente:
-// los datos que se le pasan a los componentes no son argumentos, se llaman "props" y es una convencion usarla tambien en la f. Podria poner infoDinamica, o lo que sea.. sigue siendo un "props"
+/* Funcion default del componente:
+los datos que se le pasan a los componentes no son argumentos, se llaman "props" y es una convencion usarla tambien en la f.
+Podria poner infoDinamica, o lo que sea.. sigue siendo un "props" */
+
 export default function Item(props) {
     /* tambien puedo desestructurar el objeto y extraer dentro de 1 const cada propiedad, ej:
         const { title } = props
@@ -47,10 +49,7 @@ export function ItemButton() {
 }
 
 
-
-
-/* 
-Esto es lo básico que debe tener mi componente:
+/* Esto es lo básico que debe tener mi componente:
 
 function Item() {
     return (

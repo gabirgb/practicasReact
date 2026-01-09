@@ -4,3 +4,5 @@ function Nombre() {
 return ()
 }
 
+// Los estados permiten que un componente "recuerde" información entre renderizados, lo que es esencial para crear aplicaciones dinámicas donde la información puede cambiar en respuesta a las interacciones del usuario.
+
