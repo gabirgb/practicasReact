@@ -2,7 +2,8 @@
 los datos que se le pasan a los componentes no son argumentos, se llaman "props" y es una convencion usarla tambien en la f.
 Podria poner infoDinamica, o lo que sea.. sigue siendo un "props" */
 
-export default function Item(props) {
+// export default function Item(props) {
+export default function Item ( {id, title, price, category, stock, img, description } ) {
     /* tambien puedo desestructurar el objeto y extraer dentro de 1 const cada propiedad, ej:
         const { title } = props
     De esta forma js busca dentro de props la propiedad title y la guarda dentro de una const con el mismo nombre 
@@ -29,16 +30,23 @@ export default function Item(props) {
     */
     return (
         <div style={{border: "solid 1px white", borderRadius: "8px", padding: "16px", margin: "12px auto"}}>
-            <h3>{props.title}</h3>
-            <img width="200px" src={props.image} />
-            <p>Precio: {props.price}</p>
-            <p>Descripción del producto</p>
-            <button onClick={props.handleClic}>Ver Producto</button>
+            <h3>{id} - {title}</h3>
+            <img width="200px" src={img} />
+            <p>Precio: {price}</p>
+            <p>Descripción del producto: {description}</p>
+            <p>Categoría: {category} - Stock: {stock}</p>
+            <button>Ver Producto</button>
         </div>
     )
 }
 
-// "export" solo se pone cuando en un mismo archivo exporto distintas funciones, ejemplo:
+
+
+
+
+
+//** Uso de export / export default
+/* "export" solo se pone cuando en un mismo archivo exporto distintas funciones, ejemplo:
 export function ItemButton() {
     return (
         <div>
@@ -46,9 +54,9 @@ export function ItemButton() {
             <button>Clic aqui</button>
         </div>
     )
-}
+}*/
 
-
+//** Estructura básica de un componente
 /* Esto es lo básico que debe tener mi componente:
 
 function Item() {
