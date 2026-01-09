@@ -2,15 +2,14 @@
 import "./App.css"
 import Button from "./components/Button"
 // si son jsx o js no hace falta. Además de importarlo tengo que indicar qué parte de mi componente se renderea, y en qué lugar del codigo. Ojo! los nombres de componentes, funciones y archivos son case sensitive para GIT y para el traspilador de jsx, usar como convecion camelCase.
-// "export default"
+// cuando "export default" se importa así:
 import Item from "./components/Item"
-// cuando importo las otras f q no son default, las tengo q encerrar en llaves:
-// "export named"
-import {ItemButton} from "./components/Item" 
+// cuando importo las otras f q NO son default, las tengo q encerrar en llaves ("export named"):
+// import {ItemButton} from "./components/Item"
 
 function App() {
   // Al principio, antes del return, tb se declaran las vars, despues puedo llamarlas desde HTML con el nombre de la var entre {}.
-  const usuario = "Roque"
+  const usuario = "Gabi"
   const templateSaludo = `Hola ${usuario}!!!` //-> backstrings!
 
   function randomColor() {

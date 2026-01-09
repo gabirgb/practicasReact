@@ -1,3 +1,27 @@
+// NODE.JS -> Entorno de ejecución de js que permite ejecutar código fuera del navegador. Esto permite que js también funcione del lado de servidor, interactualdo directamente con el sist operativo y extendiendo su potencial.
+
+// NPM -> "Node package manager": es la herramienta que acompaña a Node.js para la gestión de paquetes y módulos. NPM permite buscar, descargar, e instalar módulos de terceros
+- simplificando la integración de librerías
+- no es necesario reinventar la rueda, el modelo se basa en reutilizacion desde pequeñas utilidades hasta frameworks completos.
+- gestion de dependencias centralizada.
+- crear y ejecutar scripts personalizados, lo cual facilita la automatización de tareas comunes como el inicio del servidor, la compilación de código, y la ejecución de pruebas.
+
+// Polyfills: son parches de código que permiten que aplicaciones modernas creadas con frameworks como React puedan ser ejecutadas sin errores en dispositivos más viejos que no disponen de la tecnología necesaria. Se reemplaza el código moderno por una version más rústica.
+// Transpiling: es el proceso de convertir código de un lenguaje a otro lenguaje. En Vite usamos Babel como transpilador para convertir JavaScript moderno (ES6+) a una versión más antigua del lenguaje para asegurar su compatibilidad con navegadores que aún no soportan las últimas funcionalidades y crear los polyfills de forma automática.
+
+// Vite: es un empaquetador más moderno que Webpack.
+
+// COMPONENTES
+// Beneficios:
+● Reutilización del código
+● Separación de responsabilidades: Cada pieza del código tiene una tarea clara, lo que mejora la comprensión y facilita su prueba.
+● Mejor rendimiento: React solo actualiza los componentes que cambian, sin recargar toda la página.
+● Facilita el testing: Su aislamiento permite probarlos individualmente con mayor facilidad.
+
+// Dos tipos de componentes (separación de Presentación y Lógica)
+- Stateless Components/ Componentes de presentación: se encargan exclusivamente de cómo se ve algo. No manejan datos ni lógica compleja: solo muestran lo que reciben por props. No dependen de fuentes de datos externas. Tienen poco o ningún estado.
+- Statefull Components/ Componentes contenedores: gestionan el estado y la lógica del negocio. Se encargan de obtener datos, procesarlos y pasarlos a los componentes de presentación. Manejan estados y eventos. Controlan la comunicacion con los otros componentes.
+
 **# Clase 01 - Instalacion y configuracion**
 
 
@@ -216,7 +240,7 @@ return (
 
 <!-- <div>
 
-&nbsp;     <h1>Hola {Roque}</h1>
+&nbsp;     <h1>Hola {usuario}</h1>
 
 &nbsp;       <a href="https://react.dev" target="\_blank">
 
@@ -268,7 +292,7 @@ El html y css está DENTRO del js, por lo q podemos poner f directamente en las 
 
 La f pricipal se llama igual q el archivo (mi componente, "App" en este caso).
 
-Esta funcion retorna HTML. Antes se usaban clases en React para organizar todo, pero hoy en dia se udan funciones directamente, es una aproximacion más moderna.
+Esta funcion retorna HTML. Antes se usaban clases en React para organizar todo, pero hoy en dia se usan funciones directamente, es una aproximacion más moderna.
 
 Toda f de react recibe scripts, css, componentes etc y retorna una parte de la interfaz: un boton, una tab, un panel, etc..
 
@@ -278,9 +302,9 @@ cuando trabajamos en JSX los eventHandlers hay q ponerlos inline en el component
 
 <button onClick="funcionHandleEvento()">clic aca</button>
 
-que esta sintaxis en html está prohibidiiiidima, pero como desde jsx traspilo a react lo podemos hacer, ya q el codigo no queda expuesto.
+que esta sintaxis en html está prohibidiiiisima, pero como desde jsx traspilo a react lo podemos hacer, ya q el codigo no queda expuesto.
 
-El problema de usar métodos como "addEventListener" o "getElementById" por ejemplo es que debería declararlos antes del "return" del componente, y como el boton html se renderea despues q el metodo, nunca podría capturarlo. Por eso se usan las llamadas directamente inline (con formato camelCase para q funcione).
+El problema de usar métodos como "addEventListener" o "getElementById" por ejemplo es que debería ejecutar los listeners antes del "return" del componente, y como el boton html se renderea despues q el metodo, nunca podría capturarlo. Por eso se usan las llamadas directamente inline (con formato camelCase para q funcione).
 
 
 
