@@ -2,6 +2,8 @@
 los datos que se le pasan a los componentes no son argumentos, se llaman "props" y es una convencion usarla tambien en la f.
 Podria poner infoDinamica, o lo que sea.. sigue siendo un "props" */
 
+import { Link } from "react-router";
+
 // export default function Item(props) {
 export default function Item ( {id, title, price, category, stock, img, description } ) {
     /* tambien puedo desestructurar el objeto y extraer dentro de 1 const cada propiedad, ej:
@@ -27,15 +29,24 @@ export default function Item ( {id, title, price, category, stock, img, descript
         export default function Item( {title, price, image}) {...}
     Con las {} indico que voy a recibir un objeto (recordar que SIEMPRE recibo un objeto, por eso si o si hay que poner las llaves), y directamente pido las propiedades que voy a recibir.
     Ojo! con esta modalidad el objeto "props" deja de existir porque directamente recibo las propiedades una por una. Luego en el return tambien uso las props solo con llave, ej: <h3>{title}</h3> 
+
+    //* RECORDAR QUE SON BACKTICKS (y no backstrings)
+    y que se hacen con ATL GR + }
+    
     */
     return (
         <div style={{border: "solid 1px white", borderRadius: "8px", padding: "16px", margin: "12px auto"}}>
             <h3>{id} - {title}</h3>
-            <img width="200px" src={img} />
+            <img 
+                src={`https://placehold.co/200x200?text=${title}&font=roboto`} 
+                alt={title} 
+            />
             <p>Precio: {price}</p>
             <p>Descripción del producto: {description}</p>
             <p>Categoría: {category} - Stock: {stock}</p>
-            <button>Ver Producto</button>
+            <Link to={`/producto/${id}`}>
+                <button>Ver Producto</button>
+            </Link>
         </div>
     )
 }
